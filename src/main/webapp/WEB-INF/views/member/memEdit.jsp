@@ -37,16 +37,16 @@
 	<!-- </form>  -->
 	<form action='<%=request.getContextPath() %>/member/edit.do' method='post'>
 		아이디 : <input type='text' name='memId' value="${memVo.memId}" /><br> <!-- readonly="readonly" -->
-		<%-- 비밀번호 : <input type='password' name='memPass' value="${memVo.memPass}" /><br>  --%>
+		
 		이름 : <input type='text' name='memName' value="${memVo.memName}" 
 		<c:if test= "${memVo.memId==loginUser.memId}"></c:if>/><br> 
 		전화번호 : <input type='text' name='memPhone' value="${memVo.memPhone}"/><br>
 		이메일 : <input type='text' name='memEmail' value="${memVo.memEmail}"/><br>
-		<%-- <c:if test= "${memVo.memId==loginUser.memId}">readonly="readonly"</c:if>/><br> --%>
-		<input type='submit' />
-		<%-- <c:if test= "${memVo.memId==loginUser.memId}"> --%>
 		
-		<%-- </c:if>  --%>
+		<input type='submit' />
+		
+		
+		
 		</form>
 
 </body>

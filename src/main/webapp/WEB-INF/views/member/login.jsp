@@ -8,30 +8,33 @@
 <head>
 <meta charset='UTF-8'>
 <title>Insert title here</title>
+<link href="css/login.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+
 </head>
 <body>
-<link href="/css/login.css" rel="stylesheet" />
-<jsp:include page="/WEB-INF/views/comm/menu.jsp" /> 
-	<h1>로그인</h1>
 
-<%-- 	<form action='<%=request.getContextPath() %>/member/login.do' method='post'>
-		아이디 : <input type='text' name='memId' /><br> 
-		비밀번호 : <input type='password' name='memPass' /><br> 
-		<input type='submit' value="로그인"/>
-	</form> --%>
-	
-		<div id="map" style="width:500px;height:400px;"></div>
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7aaed01cf75813f038d6e4b162bd453d"></script>
-		<script>
-			var container = document.getElementById('map');
-			var options = {
-				center: new kakao.maps.LatLng(33.450701, 126.570667),
-				level: 3
-			};
-	
-			var map = new kakao.maps.Map(container, options);
-		</script>
-	
+<jsp:include page="/WEB-INF/views/comm/menu.jsp" /> 
+   <h1>로그인</h1>
+
+<%--    <form action='<%=request.getContextPath() %>/member/login.do' method='post'>
+      아이디 : <input type='text' name='memId' /><br> 
+      비밀번호 : <input type='password' name='memPass' /><br> 
+      <input type='submit' value="로그인"/>
+   </form> --%>
+   
+      <div id="map" style="width:500px;height:400px;"></div>
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7aaed01cf75813f038d6e4b162bd453d"></script>
+      <script>
+         var container = document.getElementById('map');
+         var options = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667),
+            level: 3
+         };
+   
+         var map = new kakao.maps.Map(container, options);
+      </script>
+   
     
     
     
@@ -65,4 +68,3 @@
     
 </body>
 </html>
-

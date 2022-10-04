@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.teamproject.teamapp.mypage.MypageDao">
+	
+	<!-- com.exam.member.MemberVO 객체의 -->
+	<resultMap type="com.teamproject.teamapp.mypage.MypageVO" id="mypageMap">
+	<!-- memId 속성(변수,필드)에 mem_id 컬럼 값을 저장 -->
+	<!-- PK컬럼은 result 태그 대신 id 태그를 사용 -->
+		<id property="memId" column="mem_id" />
+		<result property="memPass" column="mem_pass" />
+		<result property="memName" column="mem_name" />
+		<result property="memPhone" column="mem_phone" />
+	   <result property="memEmail" column="mem_email" />
+	</resultMap>
+
+	<!-- SQL문의 종류와 동일한 이름의 태그를 사용하여 SQL문을 등록 -->
+	<!-- id는 파일 내에서 현재 SQL문의 고유한 이름 -->
+	<!-- 보통은 SQL문을 실행할 Dao 인터페이스의 매서드 이름으로 설정 -->
+	<!-- SQL문 실행 결과 1개의 레코드를 담을 객체의 클래스명을 resultType 속성에 지정 -->
+	<!-- 마이바티스는 기본적으로 resultType객체의 컬럼이름과 동일한 이름의 변수(속성,필드)에 컬럼의 값을 저장 -->
+  <select id="selectMypageList" resultType="MypageVo">
+	 SELECT  mem_id, mem_name, mem_phone, mem_email, mem_pass FROM MEMBER2
+  </select>
+  
+  <select id="selectMypage" parameterType="string" resultType="MypageVo">    
+  	 SELECT  mem_id, mem_name, mem_phone, mem_email FROM MEMBER2 WHERE mem_id = #{memId}
+  </select>
+  
+  <insert id="insertMypage" parameterType="MypageVo" >
+	INSERT INTO MEMBER2
+	((mem_id, mem_pass, mem_name, mem_phone, mem_email) 
+	VALUES (#{memId}, #{memPass}, #{memName}, #{memPhone}, #{memEmail})  
+  </insert>
+  
+  <update id="updateMypage" parameterType="MypageVo" >
+	UPDATE MEMBER2 SET mem_pass=#{memPass} WHERE mem_id=#{memId}
+  </update>
+  
+  <update id="update1Mypage" parameterType="MypageVo" >
+	UPDATE MEMBER2 
+	SET mem_phone=#{memPhone}, mem_email=#{memEmail} 
+	WHERE mem_id=#{memId}
+  </update>
+ 
+  <delete id="delMypage" parameterType="MypageVo">
+  	<!-- 단일값을 갖는 파라미터를 받은 경우에는 속성이름(변수)이름이 무의미 -->
+  	DELETE FROM MEMBER2 WHERE mem_id = #{memId}
+  </delete>
+   
+  <select id="selectLoginMypage" parameterType="MypageVo" resultType="MypageVo">    
+  	 SELECT mem_id, mem_name, mem_phone, mem_email FROM MEMBER2 WHERE mem_id= #{memId} and mem_pass = #{memPass}
+  </select>
+   
+  <select id="passCheck" parameterType="MypageVo" resultType="int">
+  	SELECT COUNT(*) FROM MEMBER2 WHERE mem_pass = #{memPass}
+  </select>
+   
+   
+</mapper>
