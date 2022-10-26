@@ -13,7 +13,7 @@
 <body> 
 
 
-<jsp:include page="/WEB-INF/views/comm/menu.jsp"/>
+
 
 <div id="biggest">	
  
@@ -43,7 +43,7 @@
 		<div id="information">
 		<a href="${pageContext.request.contextPath}/mypage/editnm.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup1">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
@@ -60,16 +60,16 @@
 	
 	
 		<div id="information">
-		<a href="${pageContext.request.contextPath}/mypage/editnm.do?memId=${loginUser.memId}">
+		<a href="${pageContext.request.contextPath}/mypage/hostadd.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup2">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
 					</div>
 					<div id="infadown">
-                    <h2>결제관리</h2>
-                    <h3>결제수단을 확인/관리 및 추가할 수 있습니다.</h3>
+                    <h2>호스트되기</h2>
+                    <h3>직접 옥상을 등록할 수 있습니다.</h3>
                 </div>
 				
 			</div>
@@ -81,7 +81,7 @@
 		<div id="information">
 		<a href="${pageContext.request.contextPath}/mypage/editnm.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup3">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
@@ -99,7 +99,7 @@
 		<div id="information">
 		<a href="${pageContext.request.contextPath}/mypage/editnm.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup4">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
@@ -117,7 +117,7 @@
 		<div id="information">
 		<a href="${pageContext.request.contextPath}/mypage/editnm.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup5">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
@@ -136,7 +136,7 @@
 		<div id="information">
 		<a href="${pageContext.request.contextPath}/mypage/editnm.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup6">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
@@ -155,7 +155,7 @@
 		<div id="information">
 		<a href="${pageContext.request.contextPath}/mypage/editnm.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup7">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
@@ -174,14 +174,14 @@
 		<div id="information">
 		<a href="${pageContext.request.contextPath}/mypage/del.do?memId=${loginUser.memId}">
 			<div id="infa">
-				<div id="infaup">
+				<div id="infaup8">
 					<c:if test="${loginUser!=null}">
 						
 					</c:if>
 					</div>
 					<div id="infadown">
                     <h2>회원탈퇴</h2>
-                    <h3>회원탈퇴는 할 수있습니다.</h3>
+                    <h3>회원탈퇴를 할 수있습니다.</h3>
                
 				</div>
 			</div>
@@ -190,12 +190,8 @@
 	
 	</div>
 	
-	
-	
-	
-	
+</div>		
 
-</div>			
 </body>
 </html>
 		

@@ -1,5 +1,6 @@
 package com.teamproject.teamapp.member;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.google.common.hash.Hashing;
 
 @Controller
 public class MemberController {
@@ -29,14 +32,13 @@ public class MemberController {
 	
 	@RequestMapping(value = "/member/add.do", method = RequestMethod.POST)
 	public String add(MemberVo vo) {
-//		MemberVo vo = new MemberVo();
-//        vo.setMemId(req.getParameter("memId"));
-//        vo.setMemPass(req.getParameter("memPass"));
-//        vo.setMemName(req.getParameter("memName"));
-//        vo.setMemPoint(Integer.parseInt(req.getParameter("memPoint"))); 이 작업을 스프링이 해준다.
+		
+		String resultHexString //비밀번호 암호화
+        = Hashing.sha256().hashString(vo.getMemPass(), StandardCharsets.UTF_8)
+        				  .toString();
+		vo.setMemPass(resultHexString);
         int num = memberService.insertMember(vo);
 		return "redirect:/member/list.do";  
-			//뷰이름에 redirect : 접두어를 사용하여 (포워드가 아닌)리다이렉트임을 표시 + 표시하지 않으면 포워딩을 진행해버림
 	}
 	
 		@RequestMapping(value = "/member/edit.do", method = RequestMethod.GET)
@@ -74,30 +76,25 @@ public class MemberController {
 			
 			//서블릿의 service() 메서드 : 요청방식에 상관없이 실행되는 메서드
 			//서블릿의 doXxx() 메서드 : 요청방식이 xxx인 경우에 실행되는 메서드
-			
+		
+			//로그인 jsp
 			@RequestMapping(value = "/member/login.do", method = RequestMethod.GET)
 			public String loginForm() {				
 				return "/member/login";
 			}
-			
+			//로그인 로직
 			@RequestMapping(value = "/member/login.do", method = RequestMethod.POST)
 			public String login(MemberVo vo, HttpSession session){
-//				req.setCharacterEncoding("UTF-8");
-				/*스프링에서는 변수랑 속성이름이 같으면 굳이 일일히 담을 필요없이 알아서 해준다.*/
-//		        MemberVo vo = new MemberVo();
-//		        vo.setMemId(req.getParameter("memId"));
-//		        vo.setMemPass(req.getParameter("memPass"));
-		        
+				String resultHexString
+                = Hashing.sha256().hashString(vo.getMemPass(), StandardCharsets.UTF_8)
+                				  .toString();
+				vo.setMemPass(resultHexString);
 		        MemberVo memVo = memberService.selectLoginMember(vo);
-		        //맞는 Id와 Pass를 입력할 경우 memVo에 값이 들어가기 때문에 null값인지 확인하면 된다.
 		        if(memVo == null) { //로그인이 실패한 경우
-//		           resp.sendRedirect(req.getContextPath() + "/member/login.do"); 
 		        	//다시 로그인 페이지로 이동
 		        	return "redirect:/member/login.do";
 		        }else { //로그인이 성공한 경우
-//		           HttpSession session = req.getSession(); //현재 요청(을 보낸 사용자)가 속한 세션객체 가져오기
 		           session.setAttribute("loginUser", memVo); //로그인 성공한 사용자 정보를 세션에 "loginUser"라는 이름으로 저장 
-//		           resp.sendRedirect(req.getContextPath() + "/member/list.do"); //회원목록 페이지로 이동
 		           return "redirect:/member/list.do";
 		        }
 				

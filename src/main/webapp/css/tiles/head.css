@@ -1,0 +1,57 @@
+@charset "UTF-8";
+a {
+	text-decoration : none;
+}
+
+.logo{
+    width: 180px;
+    height: 70px;
+    margin-top: 3px;
+    float:left;
+}
+
+.pc header section .btn_srch {
+    position: absolute;
+    border: none;
+    text-indent: -9999px;
+    top: 22px;
+    right: 396px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    background-size: 24px auto;
+}
+.main-nav{
+    display: flex;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-right: 60px;
+    list-style: none;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.main-nav li{
+    margin-left: 50px;
+    color:#fff;
+    font-weight: bold;
+}
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    transition: 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px solid #88AE85; 
+}
+

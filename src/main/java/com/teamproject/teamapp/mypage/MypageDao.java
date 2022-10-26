@@ -22,8 +22,5 @@ public interface MypageDao {
 	int update1Mypage(MypageVO vo);
 
 	int passCheck(MypageVO vo);
-	
-
-//	int insertnmMypage(MypageVO vo);	
 
 }

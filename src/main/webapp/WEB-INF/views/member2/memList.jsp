@@ -15,7 +15,7 @@
 <body>
 <%-- <%@ include file="" %> --%>
 <%-- <c:import url=""></c:import> --%>
-<jsp:include page="/WEB-INF/views/comm/menu.jsp" /> 
+
 
 <!-- Tiles ,SiteMesh 일일이 jsp에 include를 하지 않아도 적용할 수 있는 라이브러리 -->
 

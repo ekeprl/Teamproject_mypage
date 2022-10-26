@@ -10,20 +10,11 @@
 <title>Insert title here</title>
 <link href="css/login.css" rel="stylesheet" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
-
+<link href="/css/login.css" rel="stylesheet" />
 </head>
 <body>
 
-<jsp:include page="/WEB-INF/views/comm/menu.jsp" /> 
-   <h1>로그인</h1>
 
-<%--    <form action='<%=request.getContextPath() %>/member/login.do' method='post'>
-      아이디 : <input type='text' name='memId' /><br> 
-      비밀번호 : <input type='password' name='memPass' /><br> 
-      <input type='submit' value="로그인"/>
-   </form> --%>
-   
-      <div id="map" style="width:500px;height:400px;"></div>
       <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7aaed01cf75813f038d6e4b162bd453d"></script>
       <script>
          var container = document.getElementById('map');
@@ -34,13 +25,7 @@
    
          var map = new kakao.maps.Map(container, options);
       </script>
-   
     
-    
-    
-    
-    
-    <input type="text" value="로그인" class="title">
     <div class="login-form">
     <div id="logo">
         <img src="/images/login/logo.png" alt="" >

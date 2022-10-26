@@ -17,20 +17,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {		
-		System.out.println("LoginInterceptor : preHandle");
 		
 		HttpSession session = request.getSession();
 		MemberVo vo = (MemberVo) session.getAttribute("loginUser"); //로그인한 사용자 정보를 가져오기(session에서 꺼내온 user정보가 컴퓨터가 인식할 수 있도록 membervo형식으로 강제 형변환)
-		
-		
-		/*
-		 * if(vo==null) {//로그인한 적이 없다면 response.sendRedirect(request.getContextPath() +
-		 * "/member/login.do"); //로그인 페이지로 이동 return false; //이후 핸들러(컨트롤러, 인터셉처) 실행 금지
-		 * 
-		 * }
-		 */
-		  
-		//반환값은 이후 실행될 핸들러(컨트롤러,인터셉터)의 실행 여부를 결정
+		if (vo == null) { //로그인하지 않은 경우
+			response.sendRedirect(request.getContextPath()+"/member/login.do"); //로그인화면으로 리다이렉트
+			return false; //컨트롤러 실행안함
+		}
 		return true; //이후 핸들러(컨트롤러, 인터셉터) 실행
 	}
 	

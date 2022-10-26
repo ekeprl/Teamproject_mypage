@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<jsp:include page="/WEB-INF/views/comm/menu.jsp" /> 
+
 <%-- <jsp:include page="/WEB-INF/jsp/menu.jsp" /> --%>
 	<h1>회원정보변경</h1>
      

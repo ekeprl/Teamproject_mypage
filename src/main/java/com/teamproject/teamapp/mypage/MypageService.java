@@ -14,7 +14,6 @@ public interface MypageService {
 
 	int updateMypage(MypageVO vo);
 	
-	
 	MypageVO selectLoginMypage(MypageVO vo);
 
 	int update1Mypage(MypageVO vo);

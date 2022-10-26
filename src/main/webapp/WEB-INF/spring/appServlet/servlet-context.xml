@@ -11,6 +11,30 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
+	<!-- 컨트롤러가 문자열(뷰이름)을 반환했을 때,
+	TilesViewResolver가 먼저 뷰이름을 처리하고,
+	TilesViewResolver가 처리할 수 없는경우 InternalResourceViewResolver가 처리하도록
+	order속성을(순서) 설정 -->
+	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+		<beans:property name="order" value="1" />
+	</beans:bean>
+	<context:component-scan base-package="com.teamproject.teamapp" />
+	
+	
+	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+		<beans:property name="order" value="1" />
+	</beans:bean>
+	<context:component-scan base-package="com.exam.myapp" />
+	<!-- 타일즈 설정 정보 등록(화면 정의 설정 파일 위치 지정) -->
+	 <beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	   <beans:property name="definitions">
+	     <beans:list>
+	       <beans:value>/WEB-INF/views/tiles/tiles.xml</beans:value>
+	     </beans:list>
+	   </beans:property>
+	 </beans:bean>
+	
+	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
@@ -65,5 +89,16 @@
 	<mybatis-spring:scan base-package="com.teamproject.teamapp" 
 	    annotation="org.apache.ibatis.annotations.Mapper"/>
 	    <!-- mybatis가 scan을 하기 위해 경로를 설정해준다. -->
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/**"/> 
+			<exclude-mapping path="/member/login.do"/>  <!-- 로그인안해도 사용할 수 있도록 제외 -->
+			<exclude-mapping path="/member/add.do"/>	<!-- 로그인안해도 사용할 수 있도록 제외 -->
+			<exclude-mapping path="/member/check.do"/>	<!-- 로그인안해도 사용할 수 있도록 제외 -->
+			<beans:bean class="com.teamproject.teamapp.member.LoginInterceptor"  /> <!-- 모든경로에대해 LoginInterceptor를 실행해라 -->
+		</interceptor>
+	</interceptors>
+	
 	
 </beans:beans>

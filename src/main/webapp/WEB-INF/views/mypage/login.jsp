@@ -9,7 +9,7 @@
 		</head>
 		<body>
 		
-<jsp:include page="/WEB-INF/views/comm/menu.jsp"/>
+
 		
 		 <h1> 로그인 </h1> 
 		

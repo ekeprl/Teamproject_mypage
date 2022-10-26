@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 </head>
 <body> 
-<jsp:include page="/WEB-INF/views/comm/menu.jsp"/>
+
 
 
 	<h1> 로그인정보 수정 </h1> 

@@ -26,7 +26,7 @@
   </select>
   
   <select id="selectMypage" parameterType="string" resultType="MypageVo">    
-  	 SELECT  mem_id, mem_name, mem_phone, mem_email FROM MEMBER2 WHERE mem_id = #{memId}
+  	 SELECT  mem_id, mem_name, mem_phone, mem_email, mem_pass FROM MEMBER2 WHERE mem_id = #{memId}
   </select>
   
   <insert id="insertMypage" parameterType="MypageVo" >
@@ -41,7 +41,7 @@
   
   <update id="update1Mypage" parameterType="MypageVo" >
 	UPDATE MEMBER2 
-	SET mem_phone=#{memPhone}, mem_email=#{memEmail} 
+	SET mem_phone=#{memPhone}, mem_email=#{memEmail} , mem_name=#{memName}
 	WHERE mem_id=#{memId}
   </update>
  

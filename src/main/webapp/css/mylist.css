@@ -50,6 +50,7 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    
 }
 
 /* change colours to suit your needs */
@@ -166,7 +167,7 @@ body{
 
 #biggest {
     width: 1280px;
-    height: 850px;
+    height: 800px;
     margin: auto;
     
 }
@@ -181,7 +182,7 @@ body{
 #biggest2 {
     margin: 30px auto;
     width: 1120px;
-    height: 800px;
+    height: 750px;
     padding: 10px 40px 10px 40px;
 
 }
@@ -236,7 +237,7 @@ body{
     width: 272px;
     height: 50px;
     margin-bottom: 32px;
-    background-image: url("/images/credit.svg");
+    background-image: url("/images/change.JPG");
     background-repeat: no-repeat;
     background-position: 0% 0% ;
     background-size: 40px 35px;
@@ -245,7 +246,7 @@ body{
     width: 272px;
     height: 50px;
     margin-bottom: 32px;
-    background-image: url("/images/mail.svg");
+    background-image: url("/images/credit.svg");
     background-repeat: no-repeat;
     background-position: 0% 0% ;
     background-size: 40px 35px;
@@ -318,48 +319,4 @@ body{
 }
 
 
-footer{
-    overflow:hidden;
-    clear:both;
-    position:relative;
-    margin: auto;
-    padding:30px 31px 40px 31px !important;
-    border-top:1px solid rgba(0,0,0,0.08);
-    background:#88AE85;
-    font-size:14px;
-    line-height:20px;
-    color:white;
-}
-footer .align{
-    width:620px;margin:0 auto
-}
-footer a{
-    color:white;
-}
-footer .link{
-    overflow:hidden
-}
-footer .link li{
-    float:left; margin-bottom:5px; line-height:normal;
-    font-size: 1.3em;
-}
-footer .link li a{
-    display:inline-block;
-    font-size: 14px;
-}
-footer .link li button{
-    font-size:13px;
-}
-footer .link li span{
-    display:inline-block;
-    position:relative;
-    top:-2px;
-    width:24px;
-    font-size:11px;
-    text-align:center;
-}
-footer nav ul li a{
-    color: white;
-    text-decoration: none;
-}
 

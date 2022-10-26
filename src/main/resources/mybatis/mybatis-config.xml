@@ -13,9 +13,6 @@
     <!-- 마이바티스 설정파일에서 "com.exam.member.MemberVo" 대신 "MemberVo" 사용 가능 -->
     <typeAlias type="com.teamproject.teamapp.member.MemberVo" alias="MemberVo"/>
     <typeAlias type="com.teamproject.teamapp.mypage.MypageVO" alias="MypageVO"/>
-    <!-- <typeAlias type="com.exam.exspring.bbs.BbsVo" alias="BbsVo"/>
-    <typeAlias type="com.exam.exspring.reply.ReplyVo" alias="ReplyVo"/> -->
-<!--     <typeAlias type="com.exam.student.StuVo" alias="StuVo"/> -->
   </typeAliases>
   
 <!--   <environments default="development">
@@ -33,9 +30,6 @@
    <!-- 마이바티스를 통해서 실행할 SQL문들을 정의해놓은 XML파일들 --> 
     <mapper resource="mybatis/MemberMapper.xml"/>
     <mapper resource="mybatis/MypageMapper.xml"/>
-    <!-- <mapper resource="mybatis/BbsMapper.xml"/>
-    <mapper resource="mybatis/ReplyMapper.xml"/> -->
-    <!-- <mapper resource="mybatis/StuMapper.xml"/> -->
   </mappers>
 </configuration>
 

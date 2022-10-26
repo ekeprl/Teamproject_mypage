@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<jsp:include page="/WEB-INF/views/comm/menu.jsp" /> 
+
 
 <body>
 
